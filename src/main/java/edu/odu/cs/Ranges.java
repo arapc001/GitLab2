@@ -9,7 +9,7 @@ import java.util.ListIterator;
  */
 public class Ranges implements Iterable<Interval> {
 
-  LinkedList<Interval> remaining;
+  private LinkedList<Interval> remaining;
 
   /**
    * Create a range with no gaps.
@@ -17,7 +17,8 @@ public class Ranges implements Iterable<Interval> {
    * @param low
    * @param high
    */
-  Ranges(double low, double high) {
+  public Ranges(double low, double high) {
+    super();
     remaining = new LinkedList<>();
     remaining.add(new Interval(low, high));
   }
@@ -30,6 +31,7 @@ public class Ranges implements Iterable<Interval> {
    * @param toRemove the range of numbers to subtract
    */
   public void remove(Interval toRemove) {
+    
     if (toRemove.width() == 0.0) {
       return;
     }
