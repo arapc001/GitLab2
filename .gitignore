@@ -1,8 +1,7 @@
 # Compiled class file
 *.class
 
-# Jar file
-*.jar
+
 
 # classpath file
 *.classpath
