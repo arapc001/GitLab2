@@ -34,3 +34,5 @@ bin/
 build/
 target/
 /.gradle/
+/bin1/
+/GitLab2/
