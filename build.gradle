@@ -27,9 +27,7 @@ task setup(){
 
 
 doLast{
-exec{
-commandLine = ['./gradlew', 'javadoc']
-}
+
 exec{
 commandLine = ['mkdir', 'build/gh-pages']
 }
