@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.odu.cs.TestInterval" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-07-22T19:53:52" hostname="io" time="0.018">
+  <properties/>
+  <testcase name="testAboveAll()" classname="edu.odu.cs.TestInterval" time="0.002"/>
+  <testcase name="testBelowAll()" classname="edu.odu.cs.TestInterval" time="0.004"/>
+  <testcase name="testAbove()" classname="edu.odu.cs.TestInterval" time="0.001"/>
+  <testcase name="testBelow()" classname="edu.odu.cs.TestInterval" time="0.0"/>
+  <testcase name="testAboveNone()" classname="edu.odu.cs.TestInterval" time="0.001"/>
+  <testcase name="testConstructorOnEmpty()" classname="edu.odu.cs.TestInterval" time="0.006"/>
+  <testcase name="testBelowNone()" classname="edu.odu.cs.TestInterval" time="0.0"/>
+  <testcase name="testConstructor()" classname="edu.odu.cs.TestInterval" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

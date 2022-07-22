@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="GitLab2__/lib/src/main/java"/>
+	<classpathentry kind="src" path="GitLab2__/lib/src/test/java"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="lib" path="build/libs/GitLab2.jar"/>
+	<classpathentry kind="lib" path="gitlab__/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="GitLab2__/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="build/classes/java/main"/>
+</classpath>

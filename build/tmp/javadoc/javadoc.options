@@ -1,0 +1,9 @@
+-classpath '/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/build/classes/java/main:/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/build/resources/main'
+-d '/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/build/docs/javadoc'
+-doctitle 'GitLab2 API'
+-notimestamp 
+-quiet 
+-windowtitle 'GitLab2 API'
+'/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/src/main/java/edu/odu/cs/Highway.java'
+'/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/src/main/java/edu/odu/cs/Interval.java'
+'/home/cs_arapc001/cs350/cs350eclipseWorkspace/gitlab2/GitLab2/src/main/java/edu/odu/cs/Ranges.java'
