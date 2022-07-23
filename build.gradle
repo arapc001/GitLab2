@@ -95,7 +95,7 @@ exec{
 commandLine = ['git', 'checkout', 'gh-pages' ]
 }
 if(file('gh-pages').exists()){
-fileUtils.cleanDirectory('gh-pages')
+FileUtils.cleanDirectory('gh-pages')
 }
 
 exec{
