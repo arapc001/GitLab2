@@ -22,7 +22,10 @@ dependencies {
    
 }
 
-task setup(){
+
+
+
+task setup(dependsOn: javadoc){
 
 
 
@@ -59,7 +62,7 @@ commandLine = ['git', 'push']
 }
 }
 }
-if(file('build/docs').exists()){
+if(file('build/reports').exists()){
 from(file('build/reports'))
 into(file('./gh-pages/reports'))
 doLast{
@@ -86,7 +89,7 @@ exec{
 commandLine = ['git', 'pull', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
 }
 exec{
-commandLine = ['git', 'add', './gh-pages']
+commandLine = ['git', 'add', 'build/gh-pages']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'deploy reports']
