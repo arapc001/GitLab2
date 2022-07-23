@@ -61,7 +61,7 @@ from (file('build/docs'))
 into(file('gh-pages/docs'))
 
 exec{
-commandLine = ['git', 'add', './gh-pages/docs']
+commandLine = ['git', 'add', 'gh-pages/docs']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'copy docs']
