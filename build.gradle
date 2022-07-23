@@ -100,7 +100,7 @@ commandLine = ['rm', '-r', 'gh-pages' ]
 }}
 
 exec{
-commandLine = ['git', 'pull', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
+commandLine = ['git', 'clone', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
 }
 exec{
 commandLine = ['git', 'add', 'gh-pages']
