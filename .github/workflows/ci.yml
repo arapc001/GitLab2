@@ -11,7 +11,7 @@ jobs:
 
     steps:    
     env: 
-    	secret: ${{secrets.REPORTS_SSH_KEY}}
+    	secret: ${{ secrets.REPORTS_SSH_KEY }}
     	   
     - uses: actions/checkout@v2
     - name: Set up JDK 11
