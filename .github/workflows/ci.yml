@@ -23,4 +23,4 @@ jobs:
            ./gradlew test
     - name: Deploy reports
       run: 
-      ./gradlew deployReports
+           ./gradlew deployReports
