@@ -43,19 +43,31 @@ commandLine = ['mkdir', 'build/gh-pages/reports']
 }
 
 task reports(type: Copy ){
+
+if(file('build/docs').exists(){
 from(file('build/docs'))
 into(file('build/gh-pages/docs'))
-
-from(file('build/reports'))
-into(file('build/gh-pages/reports'))
-
 doLast{
 exec{
-commandLine = ['git', 'add', '-A']
+commandLine = ['git', 'add', 'build/gh-pages/docs']
 }
 exec{
 commandLine = ['git', 'push']
 }
+}
+}
+if(file('build/docs').exists(){
+from(file('build/reports'))
+into(file('build/gh-pages/reports'))
+doLast{
+exec{
+commandLine = ['git', 'add', 'build/gh-pages/reports']
+}
+exec{
+commandLine = ['git', 'push']
+}
+}
+
 }
 }
 
@@ -68,7 +80,7 @@ exec{
 commandLine = ['git', 'pull', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
 }
 exec{
-commandLine = ['git', 'add', '-A']
+commandLine = ['git', 'add', 'gh-pages']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'deploy reports']
