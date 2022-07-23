@@ -29,13 +29,13 @@ task setup(){
 doLast{
 
 exec{
-commandLine = ['mkdir', 'build/gh-pages']
+commandLine = ['mkdir', './gh-pages']
 }
 exec{
-commandLine = ['mkdir', 'build/gh-pages/docs']
+commandLine = ['mkdir', './gh-pages/docs']
 }
 exec{
-commandLine = ['mkdir', 'build/gh-pages/reports']
+commandLine = ['mkdir', './gh-pages/reports']
 }
 
 }
@@ -44,24 +44,30 @@ commandLine = ['mkdir', 'build/gh-pages/reports']
 
 task reports(type: Copy ){
 
-if(file('build/docs').exists(){
+if(file('build/docs').exists()){
 from(file('build/docs'))
-into(file('build/gh-pages/docs'))
+into(file('./gh-pages/docs'))
 doLast{
 exec{
-commandLine = ['git', 'add', 'build/gh-pages/docs']
+commandLine = ['git', 'add', './gh-pages/docs']
+}
+exec{
+commandLine = ['git', 'commit', '-m', 'copy docs']
 }
 exec{
 commandLine = ['git', 'push']
 }
 }
 }
-if(file('build/docs').exists(){
+if(file('build/docs').exists()){
 from(file('build/reports'))
-into(file('build/gh-pages/reports'))
+into(file('./gh-pages/reports'))
 doLast{
 exec{
-commandLine = ['git', 'add', 'build/gh-pages/reports']
+commandLine = ['git', 'add', './gh-pages/reports']
+}
+exec{
+commandLine = ['git', 'commit', '-m', 'copy reports']
 }
 exec{
 commandLine = ['git', 'push']
