@@ -30,21 +30,21 @@ task setup(){
 
 
 
-if(!file('./gh-pages').exists()){
+if(!file('gh-pages').exists()){
 exec{
-commandLine = ['mkdir', './gh-pages']
+commandLine = ['mkdir', 'gh-pages']
 }
 }
-if(!file('./gh-pages/docs').exists()){
+if(!file('gh-pages/docs').exists()){
 
 exec{
-commandLine = ['mkdir', './gh-pages/docs']
+commandLine = ['mkdir', 'gh-pages/docs']
 }
 }
-if(!file('./gh-pages/reports').exists()){
+if(!file('gh-pages/reports').exists()){
 
 exec{
-commandLine = ['mkdir', './gh-pages/reports']
+commandLine = ['mkdir', 'gh-pages/reports']
 }
 }
 
@@ -54,9 +54,9 @@ commandLine = ['mkdir', './gh-pages/reports']
 
 task reports(type: Copy ){
 
-if(file('./build/docs').exists()){
-from (file('./build/docs'))
-into(file('./gh-pages/docs'))
+if(file('build/docs').exists()){
+from (file('build/docs'))
+into(file('gh-pages/docs'))
 
 exec{
 commandLine = ['git', 'add', './gh-pages/docs']
@@ -69,12 +69,12 @@ commandLine = ['git', 'push']
 }
 }
 
-if(file('./build/reports').exists()){
-from(file('./build/reports'))
-into(file('./gh-pages/reports'))
+if(file('build/reports').exists()){
+from(file('build/reports'))
+into(file('gh-pages/reports'))
 
 exec{
-commandLine = ['git', 'add', './gh-pages/reports']
+commandLine = ['git', 'add', 'gh-pages/reports']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'copy reports']
@@ -96,7 +96,7 @@ exec{
 commandLine = ['git', 'pull', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
 }
 exec{
-commandLine = ['git', 'add', 'build/gh-pages']
+commandLine = ['git', 'add', 'gh-pages']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'deploy reports']
