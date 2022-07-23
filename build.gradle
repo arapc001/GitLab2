@@ -86,7 +86,7 @@ exec{
 commandLine = ['git', 'pull', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
 }
 exec{
-commandLine = ['git', 'add', 'gh-pages']
+commandLine = ['git', 'add', './gh-pages']
 }
 exec{
 commandLine = ['git', 'commit', '-m', 'deploy reports']
