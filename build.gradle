@@ -29,28 +29,35 @@ task setup(){
 
 
 
-doLast{
 
+if(!file('./gh-pages').exists()){
 exec{
 commandLine = ['mkdir', './gh-pages']
 }
+}
+if(!file('./gh-pages/docs').exists()){
+
 exec{
 commandLine = ['mkdir', './gh-pages/docs']
 }
+}
+if(!file('./gh-pages/reports').exists()){
+
 exec{
 commandLine = ['mkdir', './gh-pages/reports']
 }
-
 }
+
+
 
 }
 
 task reports(type: Copy ){
 
 if(file('./build/docs').exists()){
-from ('./build/docs')
-into('./gh-pages/docs')
-doLast{
+from (file('./build/docs'))
+into(file('./gh-pages/docs'))
+
 exec{
 commandLine = ['git', 'add', './gh-pages/docs']
 }
@@ -61,11 +68,11 @@ exec{
 commandLine = ['git', 'push']
 }
 }
-}
+
 if(file('./build/reports').exists()){
 from(file('./build/reports'))
 into(file('./gh-pages/reports'))
-doLast{
+
 exec{
 commandLine = ['git', 'add', './gh-pages/reports']
 }
@@ -78,7 +85,7 @@ commandLine = ['git', 'push']
 }
 
 }
-}
+
 
 task deployReports(dependsOn: 'reports'){
 doLast{
