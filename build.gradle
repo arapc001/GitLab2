@@ -21,12 +21,12 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
    
 }
+javadoc{
+failOnError false}
 
 
 
-
-task setup(){
-
+task setup(dependsOn:['test','javadoc']){
 
 
 
@@ -53,7 +53,7 @@ commandLine = ['mkdir', 'gh-pages/reports']
 }
 
 task reports(type: Copy ){
-
+dependsOn
 doLast{
 if(file('build/docs').exists()){
 from (file('build/docs'))
