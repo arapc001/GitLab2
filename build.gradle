@@ -92,7 +92,7 @@ task deployReports(dependsOn: 'reports'){
 
 doLast{
 exec{
-commandLine = ['git', 'checkout', 'gh-pages' ]
+commandLine = ['git', 'checkout', '-b', 'gh-pages' ]
 }
 if(file('gh-pages').exists()){
 exec{
