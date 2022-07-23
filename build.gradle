@@ -54,7 +54,6 @@ commandLine = ['mkdir', 'gh-pages/reports']
 
 task reports(type: Copy ){
 
-ignoreFailures = true;
 doLast{
 if(file('build/docs').exists()){
 from (file('build/docs'))
