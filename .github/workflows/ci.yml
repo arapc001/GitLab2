@@ -23,7 +23,7 @@ jobs:
            ./gradlew test
     - name: Deploy reports
       run: ssh-agent -s -t 600
-      echo "${secrets.REPORTS_SSH_KEY}" | ssh-add
+      ssh-add <(echo "${secrets.REPORTS_SSH_KEY}") 
       git config --global user.email "arapc001@odu.edu"
       git config --global user.name "Project Actions"
       ./gradlew deployReports
