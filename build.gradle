@@ -53,6 +53,8 @@ commandLine = ['mkdir', 'gh-pages/reports']
 }
 
 task reports(type: Copy ){
+
+ignoreFailures = true;
 doLast{
 if(file('build/docs').exists()){
 from (file('build/docs'))
@@ -88,6 +90,8 @@ commandLine = ['git', 'push']
 
 
 task deployReports(dependsOn: 'reports'){
+ignoreFailures = true;
+
 doLast{
 exec{
 commandLine = ['git', 'checkout', 'gh-pages' ]
