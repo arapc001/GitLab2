@@ -53,7 +53,7 @@ commandLine = ['mkdir', 'gh-pages/reports']
 }
 
 task reports(type: Copy ){
-
+doLast{
 if(file('build/docs').exists()){
 from (file('build/docs'))
 into(file('gh-pages/docs'))
@@ -83,7 +83,7 @@ exec{
 commandLine = ['git', 'push']
 }
 }
-
+}
 }
 
 
