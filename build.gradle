@@ -30,18 +30,18 @@ task setup(dependsOn:['test','javadoc']){
 
 
 
-if(!file('gh-pages').exists()){
+if(file('gh-pages').notExists()){
 exec{
 commandLine = ['mkdir', 'gh-pages']
 }
 }
-if(!file('gh-pages/docs').exists()){
+if(file('gh-pages/docs').notExists()){
 
 exec{
 commandLine = ['mkdir', 'gh-pages/docs']
 }
 }
-if(!file('gh-pages/reports').exists()){
+if(file('gh-pages/reports').notExists()){
 
 exec{
 commandLine = ['mkdir', 'gh-pages/reports']
