@@ -89,7 +89,7 @@ commandLine = ['git', 'push']
 
 
 task deployReports(dependsOn: 'reports'){
-ignoreFailures = true;
+failOnError false;
 
 doLast{
 exec{
