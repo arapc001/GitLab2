@@ -48,8 +48,9 @@ commandLine = ['mkdir', './gh-pages/reports']
 task reports(type: Copy ){
 
 if(file('build/docs').exists()){
-from(file('build/docs'))
-into(file('./gh-pages/docs'))
+from (layout.buildDirectory(
+include 'build/docs/**')
+into layout.buildDirectory.dir('./gh-pages/docs')
 doLast{
 exec{
 commandLine = ['git', 'add', './gh-pages/docs']
