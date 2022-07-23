@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest         
 
     steps:    
+    env: {{secrets.REPORTS_SSH_KEY}}
+    	secret:   
     - uses: actions/checkout@v2
     - name: Set up JDK 11
       uses: actions/setup-java@v2        
@@ -24,7 +26,7 @@ jobs:
     - name: Deploy reports
       run: |
       ssh-agent
-      ssh-add <(echo "${{secrets.REPORTS_SSH_KEY}}")
+      ssh-add <(echo "$secret")
       git config --global user.email "arapc001@odu.edu"
       git config --global user.name "Project Actions"
       ./gradlew deployReports
