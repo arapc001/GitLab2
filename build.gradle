@@ -94,7 +94,12 @@ doLast{
 exec{
 commandLine = ['git', 'checkout', 'gh-pages' ]
 }
+if(file(gh-pages.exists())){
+exec{
+commandLine = ['git', 'rm', '-r', '\"*"\', 'gh-pages' ]
+}
 
+}
 
 exec{
 commandLine = ['git', 'clone', 'git@github.com:arapc001/GitLab2.git', 'gh-pages' ]
