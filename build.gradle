@@ -96,7 +96,7 @@ commandLine = ['git', 'checkout', 'gh-pages' ]
 }
 if(file(gh-pages.exists())){
 exec{
-commandLine = ['git', 'rm', '-r', '\"*"\', 'gh-pages' ]
+commandLine = ['git', 'rm', '-r', '"*"', 'gh-pages' ]
 }
 
 }
