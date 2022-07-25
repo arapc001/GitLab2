@@ -22,6 +22,6 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.4
       with:
         ssh-private-key: ${{ secrets.REPORTS_SSH_KEY }}
-      run: ./gradlew build | 
+           ./gradlew build | 
            ./gradlew test |
            ./gradlew deployReports     
