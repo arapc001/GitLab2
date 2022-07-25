@@ -26,63 +26,38 @@ failOnError false}
 
 
 
-task setup(dependsOn:['test','javadoc']){
+task setup(dependsOn ['test', 'javadoc']){
 
-
+doLast{
 
 if(file('gh-pages').exists() == false){
-exec{
-commandLine = ['mkdir', 'gh-pages']
-}
-}
-if(file('gh-pages/docs').exists() == false){
 
-exec{
-commandLine = ['mkdir', 'gh-pages/docs']
+mkdir 'build/gh-pages'
+project.delete{delete "$buildDir/gh-pages}
 }
-}
-if(file('gh-pages/reports').exists() == false){
 
-exec{
-commandLine = ['mkdir', 'gh-pages/reports']
 }
+
+def git = git.clone{dir = "$buildDir/gh-pages"
+uri = "git@github.com:arapc001/GitLab2.git"
+bare = false
+refToCheckOut = 'gh-pages'}
+git.checkout{branch = 'gh-pages'}
+git.close()
 }
 
 
 
-}
-
-task reports(type: Copy ){
-dependsOn 'setup'
+task reports(dependsOn 'setup'){
 doLast{
 if(file('build/docs').exists()){
-from (file('build/docs'))
-into(file('gh-pages/docs'))
-
-exec{
-commandLine = ['git', 'add', 'gh-pages/docs']
-}
-exec{
-commandLine = ['git', 'commit', '-m', 'copy docs']
-}
-exec{
-commandLine = ['git', 'push']
-}
+ant.copy (todir:'build/gh-pages/docs')
+fileset(dir: 'gh-pages/docs'))
 }
 
 if(file('build/reports').exists()){
-from(file('build/reports'))
-into(file('gh-pages/reports'))
-
-exec{
-commandLine = ['git', 'add', 'gh-pages/reports']
-}
-exec{
-commandLine = ['git', 'commit', '-m', 'copy reports']
-}
-exec{
-commandLine = ['git', 'push']
-}
+ant.copy (todir:'build/reports'))
+fileset(dir: 'gh-pages/reports'))
 }
 }
 }
@@ -91,32 +66,15 @@ commandLine = ['git', 'push']
 task deployReports(dependsOn: 'reports'){
 
 doLast{
-exec{
-commandLine = ['git', 'checkout', 'gh-pages' ]
-}
-if(file(gh-pages.exists())){
-exec{
-commandLine = ['git', 'rm', '-r', '"*"', 'gh-pages' ]
-}
+def git = git.open{dir = "$buildDir/gh-pages" + "/.git"}
+git.add(update: false, patterns: ['reports/']
+git.add(update: true, patterns: ['reports/']
 
-}
+git.add(update: false, patterns: ['docs/']
+git.add(update: true, patterns: ['docs/']
+git.commit{message = "deploy reports"}
+git.close()
 
-exec{
-commandLine = ['git', 'clone', '-b' , 'gh-pages', '--single-branch', 'git@github.com:arapc001/GitLab2.git']
-}
-exec{
-commandLine = ['git', 'add', 'gh-pages']
-}
-exec{
-commandLine = ['git', 'commit', '-m', 'deploy reports']
-}
-exec{
-commandLine = ['git', 'push']
-}
-
-exec{
-commandLine = ['git', 'switch', 'main' ]
-}
 }
 }
 
