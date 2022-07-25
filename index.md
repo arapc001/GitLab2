@@ -2,5 +2,5 @@
 
 Aaron Rapcavage
 
-* [Tests](./reports/tests/test/)
-* [JavaDoc](./docs/javadoc/)
+* [Tests](./build/gh-pages/reports/tests/test/)
+* [JavaDoc](./build/gh-pages/reports/javadoc/)
