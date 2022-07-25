@@ -19,10 +19,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew              
     - name: Build and test
-      run: ./gradlew build | 
-           ./gradlew test
-    - name: Deploy reports
       uses: webfactory/ssh-agent@v0.5.4
       with:
         ssh-private-key: ${{ secrets.REPORTS_SSH_KEY }}
-           ./gradlew deployReports
+      run: ./gradlew build | 
+           ./gradlew test |
+           ./gradlew deployReports     
