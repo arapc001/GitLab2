@@ -26,38 +26,39 @@ failOnError false}
 
 
 
-task setup(dependsOn ['test', 'javadoc']){
-
+task setupCopy(){
+dependsOn 'test', 'javadoc'
 doLast{
 
 if(file('gh-pages').exists() == false){
 
-mkdir 'build/gh-pages'
-project.delete{delete "$buildDir/gh-pages}
-}
+mkdir 'build/gh-pages'}
+project.delete{delete "$buildDir/gh-pages"}
+
 
 }
 
 def git = git.clone{dir = "$buildDir/gh-pages"
 uri = "git@github.com:arapc001/GitLab2.git"
 bare = false
-refToCheckOut = 'gh-pages'}
+refToCheckout = 'gh-pages'}
 git.checkout{branch = 'gh-pages'}
 git.close()
 }
 
 
 
-task reports(dependsOn 'setup'){
+task reports(){
+dependsOn 'setupCopy'
 doLast{
 if(file('build/docs').exists()){
 ant.copy (todir:'build/gh-pages/docs')
-fileset(dir: 'gh-pages/docs'))
+fileset(dir: 'gh-pages/docs')
 }
 
 if(file('build/reports').exists()){
-ant.copy (todir:'build/reports'))
-fileset(dir: 'gh-pages/reports'))
+ant.copy (todir:'build/reports')
+fileset(dir: 'gh-pages/reports')
 }
 }
 }
@@ -67,11 +68,11 @@ task deployReports(dependsOn: 'reports'){
 
 doLast{
 def git = git.open{dir = "$buildDir/gh-pages" + "/.git"}
-git.add(update: false, patterns: ['reports/']
-git.add(update: true, patterns: ['reports/']
+git.add(update: false, patterns: ['reports/'])
+git.add(update: true, patterns: ['reports/'])
 
-git.add(update: false, patterns: ['docs/']
-git.add(update: true, patterns: ['docs/']
+git.add(update: false, patterns: ['docs/'])
+git.add(update: true, patterns: ['docs/'])
 git.commit{message = "deploy reports"}
 git.close()
 
