@@ -3,7 +3,7 @@ body {
   background-color: #cccccc; /* Used if the image is unavailable */
   background-position: center bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: contain; /* Resize the background image to cover the entire container */
+    background-size: border; /* Resize the background image to cover the entire container */
 
 }
 
@@ -11,5 +11,5 @@ body {
         margin: auto;
           background-color: transparent; /* Used if the image is unavailable */
 
-        display: block;
+        display: flex;
       }
