@@ -7,5 +7,5 @@
   background-color: #cccccc; /* Used if the image is unavailable */
   background-position: center bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: 100% auto; /* width height*/
+    background-size: container; /* width height*/
       }
