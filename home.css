@@ -1,4 +1,4 @@
-boyd {
+body {
   background-image: url("./backgrounds/mtn.png"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
