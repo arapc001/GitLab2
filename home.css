@@ -11,5 +11,5 @@ body {
         margin: auto;
           background-color: transparent; /* Used if the image is unavailable */
 
-        display: flex;
+        display: contents;
       }
