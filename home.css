@@ -1,11 +1,13 @@
-
-
-      .center {
-        margin: auto;
-        display: flex;
-        background-image: url("./backgrounds/mtn.png"); /* The image used */
+body{
+      background-image: url("./backgrounds/mtn.png"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   background-position: center bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
     background-size: container; /* width height*/
+}
+
+      .center {
+        margin: auto;
+        display: flex;
+        
       }
