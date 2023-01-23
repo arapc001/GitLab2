@@ -9,7 +9,5 @@ body {
 
       .center {
         margin: auto;
-          background-color: transparent; /* Used if the image is unavailable */
-
         display: flex;
       }
