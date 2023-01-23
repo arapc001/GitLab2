@@ -1,12 +1,13 @@
 body {
   background-image: url("./backgrounds/mtn.png"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
-  background-position: bottom; /* Center the image */
+  background-position: center bottom; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: contain; /* Resize the background image to cover the entire container */
 }
 
       .center {
         margin: auto;
+          background-color: transparent; /* Used if the image is unavailable */
+
         display: block;
       }
