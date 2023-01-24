@@ -1,13 +1,6 @@
-background{
-      background-image: url("./backgrounds/mtn.png"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  background-position: center bottom; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: container; /* width height*/
-}
+#background {
+      background-image: url("https://raw.githubusercontent.com/arapc001/GitLab2/gh-pages/backgrounds/mtn.png"); /* The image used */
+       background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* width height*/
 
-      .center {
-        margin: auto;
-        display: flex;
-        
-      }
+}
